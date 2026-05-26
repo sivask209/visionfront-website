@@ -40,11 +40,11 @@ export default function Navbar() {
           borderBottom: scrolled ? '1px solid rgba(123,83,204,0.22)' : '1px solid transparent',
         }}
       >
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 72 }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 80 }}>
 
           {/* Logo */}
           <Link href="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
-            <Image src="/logo.png" alt="VisionFront AI Solutions" width={180} height={52} style={{ height: 46, width: 'auto', filter: 'brightness(1.2) drop-shadow(0 0 12px rgba(123,83,204,0.45))' }} priority />
+            <Image src="/logo.png" alt="VisionFront AI Solutions" width={220} height={64} style={{ height: 62, width: 'auto', filter: 'brightness(1.25) drop-shadow(0 0 16px rgba(123,83,204,0.55))' }} priority />
           </Link>
 
           {/* Desktop links */}
@@ -110,7 +110,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       <div style={{
         position: 'fixed',
-        top: 72, left: 0, right: 0,
+        top: 80, left: 0, right: 0,
         zIndex: 199,
         maxHeight: menuOpen ? 440 : 0,
         overflow: 'hidden',

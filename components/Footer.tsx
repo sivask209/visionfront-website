@@ -19,7 +19,7 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <Image src="/logo.png" alt="VisionFront AI Solutions" width={180} height={50} style={{ height: 42, width: 'auto', marginBottom: 20, filter: 'brightness(1.2) drop-shadow(0 0 10px rgba(123,83,204,0.4))' }} />
+            <Image src="/logo.png" alt="VisionFront AI Solutions" width={210} height={58} style={{ height: 54, width: 'auto', marginBottom: 20, filter: 'brightness(1.25) drop-shadow(0 0 14px rgba(123,83,204,0.5))' }} />
             <p style={{ color: '#8B8BA8', fontSize: '0.9375rem', lineHeight: 1.78, maxWidth: 250, marginBottom: 28 }}>
               Building intelligent AI systems that turn businesses into 24/7 growth machines.
             </p>
