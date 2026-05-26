@@ -76,11 +76,11 @@ export default function Footer() {
         {/* Bottom bar */}
         <div style={{ borderTop: '1px solid rgba(123,83,204,0.15)', paddingTop: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 14 }}>
           <p style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: '0.68rem', letterSpacing: '0.06em', color: 'rgba(139,139,168,0.55)' }}>
-            © 2025 VisionFront AI Solutions. All rights reserved.
+            © 2026 VisionFront AI Solutions. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: 24 }}>
-            <Link href="#" style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: '0.68rem', letterSpacing: '0.06em', color: 'rgba(139,139,168,0.55)', textDecoration: 'none' }}>Privacy Policy</Link>
-            <Link href="#" style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: '0.68rem', letterSpacing: '0.06em', color: 'rgba(139,139,168,0.55)', textDecoration: 'none' }}>Terms of Service</Link>
+            <Link href="/privacy" style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: '0.68rem', letterSpacing: '0.06em', color: 'rgba(139,139,168,0.55)', textDecoration: 'none' }}>Privacy Policy</Link>
+            <Link href="/terms" style={{ fontFamily: 'var(--font-jetbrains), monospace', fontSize: '0.68rem', letterSpacing: '0.06em', color: 'rgba(139,139,168,0.55)', textDecoration: 'none' }}>Terms of Service</Link>
           </div>
         </div>
 
