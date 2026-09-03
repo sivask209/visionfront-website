@@ -107,23 +107,23 @@ export default function PrivacyPage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section style={{ background: '#05050D', padding: '160px 24px 80px', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: '-20%', left: '-10%', width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(circle,rgba(123,47,190,0.22) 0%,transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none' }} />
+      <section style={{ background: '#04070C', padding: '160px 24px 80px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: '-20%', left: '-10%', width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(circle,rgba(34,59,60,0.22) 0%,transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none' }} />
         <div style={{ maxWidth: 800, margin: '0 auto', position: 'relative', zIndex: 1 }}>
           <div style={{ display: 'flex', marginBottom: 24 }}><span className="eyebrow">Legal</span></div>
-          <h1 style={{ fontFamily: 'var(--font-syne),sans-serif', fontWeight: 800, fontSize: 'clamp(2.2rem,5vw,3.5rem)', letterSpacing: '-0.04em', lineHeight: 1.0, color: '#F0F0FF', marginBottom: 16 }}>
+          <h1 style={{ fontFamily: 'var(--font-bricolage),sans-serif', fontWeight: 800, fontSize: 'clamp(2.2rem,5vw,3.5rem)', letterSpacing: '-0.04em', lineHeight: 1.0, color: '#EDEFE7', marginBottom: 16 }}>
             Privacy Policy
           </h1>
-          <p style={{ color: '#8B8BA8', fontSize: '0.9rem', fontFamily: 'var(--font-jetbrains),monospace', letterSpacing: '0.06em' }}>
+          <p style={{ color: '#93A29A', fontSize: '0.9rem', fontFamily: 'var(--font-jetbrains),monospace', letterSpacing: '0.06em' }}>
             Last updated: January 2026
           </p>
         </div>
       </section>
 
       {/* ── CONTENT ── */}
-      <section style={{ background: '#0A0A1A', padding: '60px 24px 120px' }}>
+      <section style={{ background: '#070D16', padding: '60px 24px 120px' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <p style={{ color: '#8B8BA8', fontSize: '1rem', lineHeight: 1.8, marginBottom: 56, paddingBottom: 40, borderBottom: '1px solid rgba(123,83,204,0.15)' }}>
+          <p style={{ color: '#93A29A', fontSize: '1rem', lineHeight: 1.8, marginBottom: 56, paddingBottom: 40, borderBottom: '1px solid rgba(237,239,231,0.15)' }}>
             VisionFront AI Solutions (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website or use our services.
           </p>
 
@@ -131,18 +131,18 @@ export default function PrivacyPage() {
             {sections.map(({ title, content }, i) => (
               <div key={title}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 20 }}>
-                  <span style={{ fontFamily: 'var(--font-jetbrains),monospace', fontSize: '0.65rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#7B53CC' }}>
+                  <span style={{ fontFamily: 'var(--font-jetbrains),monospace', fontSize: '0.65rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#C8F14B' }}>
                     {String(i + 1).padStart(2, '0')}
                   </span>
-                  <h2 style={{ fontFamily: 'var(--font-syne),sans-serif', fontWeight: 700, fontSize: '1.2rem', letterSpacing: '-0.02em', color: '#F0F0FF' }}>{title}</h2>
+                  <h2 style={{ fontFamily: 'var(--font-bricolage),sans-serif', fontWeight: 700, fontSize: '1.2rem', letterSpacing: '-0.02em', color: '#EDEFE7' }}>{title}</h2>
                 </div>
-                <div style={{ paddingLeft: 32, borderLeft: '2px solid rgba(123,83,204,0.2)', display: 'flex', flexDirection: 'column', gap: 16 }}>
+                <div style={{ paddingLeft: 32, borderLeft: '2px solid rgba(237,239,231,0.2)', display: 'flex', flexDirection: 'column', gap: 16 }}>
                   {content.map(({ subtitle, text }, j) => (
                     <div key={j}>
                       {subtitle && (
-                        <p style={{ fontFamily: 'var(--font-syne),sans-serif', fontWeight: 600, fontSize: '0.9rem', color: '#06B6D4', marginBottom: 8 }}>{subtitle}</p>
+                        <p style={{ fontFamily: 'var(--font-bricolage),sans-serif', fontWeight: 600, fontSize: '0.9rem', color: '#C8F14B', marginBottom: 8 }}>{subtitle}</p>
                       )}
-                      <p style={{ color: '#8B8BA8', fontSize: '0.9625rem', lineHeight: 1.8 }}>{text}</p>
+                      <p style={{ color: '#93A29A', fontSize: '0.9625rem', lineHeight: 1.8 }}>{text}</p>
                     </div>
                   ))}
                 </div>
