@@ -33,15 +33,65 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </div>
       </section>
 
-      <section style={{ background: '#070D16', padding: '0 24px 100px' }}>
+      <section style={{ background: '#F7F6F1', padding: '56px 24px 100px' }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <div style={{ borderRadius: 24, overflow: 'hidden', marginBottom: 44 }}>
             <img src={post.image} alt="" style={{ width: '100%', display: 'block' }} />
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-            {post.body.map((p, i) => (
-              <p key={i} style={{ color: '#93A29A', fontSize: '1.0625rem', lineHeight: 1.8 }}>{p}</p>
-            ))}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
+            {post.body.map((block, i) => {
+              if (block.type === 'heading') {
+                return (
+                  <h2 key={i} style={{ fontFamily: 'var(--font-bricolage),sans-serif', fontWeight: 700, fontSize: 'clamp(1.35rem,2.6vw,1.75rem)', letterSpacing: '-0.01em', color: '#0B1210', marginTop: 14 }}>
+                    {block.text}
+                  </h2>
+                )
+              }
+              if (block.type === 'paragraph') {
+                return (
+                  <p key={i} style={{ color: '#3D4640', fontSize: '1.0625rem', lineHeight: 1.8 }}>{block.text}</p>
+                )
+              }
+              if (block.type === 'list') {
+                return (
+                  <div key={i} style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                    {block.items.map((item, j) => (
+                      <div key={j} style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
+                        <span style={{ flexShrink: 0, width: 26, height: 26, borderRadius: '50%', background: '#C8F14B', color: '#04070C', fontFamily: 'var(--font-jetbrains),monospace', fontWeight: 700, fontSize: '0.75rem', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 2 }}>{j + 1}</span>
+                        <p style={{ color: '#3D4640', fontSize: '1.0625rem', lineHeight: 1.8 }}>{item}</p>
+                      </div>
+                    ))}
+                  </div>
+                )
+              }
+              if (block.type === 'faq') {
+                return (
+                  <div key={i}>
+                    <h2 style={{ fontFamily: 'var(--font-bricolage),sans-serif', fontWeight: 700, fontSize: 'clamp(1.35rem,2.6vw,1.75rem)', letterSpacing: '-0.01em', color: '#0B1210', marginBottom: 22 }}>
+                      {block.heading}
+                    </h2>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+                      {block.items.map((qa, j) => (
+                        <div key={j} style={{ borderTop: '1px solid rgba(11,18,16,0.1)', paddingTop: 20 }}>
+                          <p style={{ fontFamily: 'var(--font-manrope),sans-serif', fontWeight: 700, fontSize: '1rem', color: '#0B1210', marginBottom: 8 }}>{qa.q}</p>
+                          <p style={{ color: '#3D4640', fontSize: '0.9625rem', lineHeight: 1.75 }}>{qa.a}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )
+              }
+              if (block.type === 'cta') {
+                return (
+                  <div key={i} style={{ background: '#0C1721', border: '1px solid rgba(200,241,75,0.3)', borderRadius: 20, padding: '32px 28px', textAlign: 'center', margin: '10px 0' }}>
+                    <h3 style={{ fontFamily: 'var(--font-bricolage),sans-serif', fontWeight: 700, fontSize: '1.25rem', letterSpacing: '-0.01em', color: '#EDEFE7', marginBottom: 10 }}>{block.heading}</h3>
+                    <p style={{ color: '#93A29A', fontSize: '0.9375rem', lineHeight: 1.7, marginBottom: 22, maxWidth: 480, marginLeft: 'auto', marginRight: 'auto' }}>{block.text}</p>
+                    <Link href={block.buttonHref} className="btn-primary" style={{ padding: '13px 26px', fontSize: '0.9rem', whiteSpace: 'normal', textAlign: 'center', maxWidth: 320 }}>{block.buttonText}</Link>
+                  </div>
+                )
+              }
+              return null
+            })}
           </div>
         </div>
       </section>
