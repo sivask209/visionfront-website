@@ -20,6 +20,69 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: 'content-plan-for-small-business',
+    category: 'Content Marketing',
+    title: 'A Simple Content Plan for Businesses Without a Marketing Team',
+    excerpt: "No marketing team? See what a real content plan takes and how outsourcing to a professional keeps your business visible at a fair price.",
+    date: 'Oct 1, 2026',
+    readTime: '7 min read',
+    image: '/blog/content-plan-for-small-business.jpg',
+    featured: true,
+    body: [
+      { type: 'paragraph', text: "Picture an owner who posts on social media three times in January, publishes one blog in February, and then disappears while client work piles up. By spring, the website looks forgotten, the social pages are quiet, and new clients keep choosing the competitor who shows up every week." },
+      { type: 'paragraph', text: "That owner isn't lazy. They're busy running a business, and a content plan for a small business is a job that never ends. The good news is you have two real options: build a team, or hand the work to a professional who does it every day. This article covers what a proper plan includes, what it costs you to handle it alone, and why outsourcing is often the simplest way to stay visible without hiring." },
+
+      { type: 'heading', text: 'Why website content is the foundation of online visibility' },
+      { type: 'paragraph', text: "Your website is the one marketing asset you fully own. Social platforms can change their rules overnight, but your site stays yours, and it's where most potential clients land before they decide to call." },
+      { type: 'paragraph', text: 'Search engines read your content to work out what you do and where you do it. Service pages explain your offer. Location pages tell Google and Bing which cities you serve. FAQ pages answer the questions people type into search before they ever pick up the phone. Without that content, there’s very little for a search engine to show.' },
+      { type: 'paragraph', text: "Fresh content matters too. A site with recent posts and updated pages looks like a business that's open and paying attention. A site nobody has touched in two years looks like one that might have closed. Visitors notice, and so do search engines." },
+
+      { type: 'heading', text: 'What a proper content plan actually includes' },
+      { type: 'paragraph', text: 'Most owners picture a content plan as "write a blog now and then." A plan that moves the needle has more parts than that.' },
+      { type: 'paragraph', text: 'Start with blogs. Publishing three to four posts a week is the ideal if you want steady growth. Each post is another page that can rank, another question answered, and another way for a stranger to find you. The more useful pages you have covering your services and your area, the more searches you can show up for. Even one or two strong posts a week beats nothing, but the pace is what compounds.' },
+      { type: 'paragraph', text: "Then there's social media. Posting every day keeps you in front of people who aren't ready to hire yet but will be soon. It also works as a trust check, since plenty of people look at your profile before they contact you. A daily presence doesn't mean daily original work, because one blog post can become several posts, a short video, and an email." },
+      { type: 'paragraph', text: 'Beyond those two sit the other pieces of visibility. Your Google Business Profile needs updates and fresh photos. Reviews need to be requested and answered. An email list lets you reach past visitors and clients directly. Short video is earning more reach for local businesses every year, and your business details need to match across directories so search engines trust them.' },
+      { type: 'paragraph', text: 'None of these pieces works well alone. Blogs feed social posts, social posts drive visits to the site, reviews support local rankings, and email brings people back. Drop one and the others get weaker.' },
+
+      { type: 'heading', text: 'The real cost of doing it all yourself' },
+      { type: 'paragraph', text: "Here's the part most owners underestimate: time. By our rough estimate, a full plan like the one above takes somewhere between 10 and 15 hours a week once you count writing, editing, making images, scheduling, replying to comments, and checking what worked. That's a part-time job stacked on top of the one you already have." },
+      { type: 'paragraph', text: "The pattern is predictable. The first few weeks go well. Then a big client project lands, or a slow month makes marketing feel optional, and the posting stops. Stopping costs more than it looks like, because visibility you've built fades when you go quiet, and restarting takes effort all over again." },
+      { type: 'paragraph', text: 'Hiring in-house isn’t a simple fix either. A full-time marketer is a significant fixed cost, and one person rarely covers strategy, writing, design, video, and SEO equally well. Building a full team is out of reach for most small businesses, and that’s fine. It just means the question changes from "how do I build a team?" to "who can do this for me?"' },
+
+      { type: 'cta', heading: 'Want this handled for you?', text: "We'll build and run your content plan, from blogs and social posts to visibility across the web, so you can focus on your clients.", buttonText: 'Reach Out to Us to Create Your Content Strategy', buttonHref: '/contact' },
+
+      { type: 'heading', text: 'Why outsourcing to a professional makes sense' },
+      { type: 'paragraph', text: 'Outsourcing gives you a whole marketing skill set for the price of one service. A good provider brings strategy, writing, design, video, and search know-how together, which would take several hires to match in-house.' },
+      { type: 'paragraph', text: 'The cost is also easier to plan around. You pay a set monthly amount, with no salaries, benefits, or software subscriptions to manage on your own.' },
+      { type: 'paragraph', text: "You also skip the trial and error. A professional already has a process for planning topics, producing content, and tracking what brings in leads. You're not paying for them to figure it out on your time." },
+      { type: 'paragraph', text: 'Then there’s consistency, which is the whole game. Publishing on schedule is their job, so it doesn’t slip when your week gets crazy. Modern AI tools make this practical at a reasonable price, because a specialist can produce the drafts, graphics, and scheduling far faster than one person working alone. The key is that a person still reviews everything, adds the local detail, and makes sure it sounds like your business.' },
+
+      { type: 'heading', text: 'What to look for in a marketing partner' },
+      { type: 'paragraph', text: 'Not every provider is worth hiring, so it helps to ask a few questions before you sign anything.' },
+      { type: 'paragraph', text: 'Ask what you’ll receive each week and whether you can see the schedule in advance. Ask to see samples, and check that the writing sounds like a real business and not a template. Look for clear pricing and a plan to report on leads and inquiries, not just the number of posts. Find out whether they understand your local market and your industry, since a law firm and a realtor need very different content. And ask who reviews the work before it goes live. If the answer is "nobody," keep looking.' },
+      { type: 'paragraph', text: 'Good providers welcome these questions. If you get vague answers or pressure to sign quickly, that tells you what you need to know.' },
+
+      { type: 'heading', text: 'How it works with VisionFront AI' },
+      { type: 'paragraph', text: 'We keep the process simple. First, we have a discovery call to learn about your business, your clients, and your goals. Next, we build a custom content plan that covers your website, blogs, social media, reviews, and lead follow-up. After that, we handle the publishing and send regular reports, so you can see what’s working.' },
+      { type: 'paragraph', text: 'We offer Starter, Growth, and Enterprise packages, so the plan can match the size of your business and your budget. You start with what you need and expand when you’re ready.' },
+
+      { type: 'heading', text: 'Common mistakes to avoid' },
+      { type: 'paragraph', text: "Waiting until business slows down is the most common one, since that's exactly when a lack of visibility hurts most. Choosing the cheapest provider with no track record is a close second, because low prices often mean copied text and no results. Posting on every platform instead of the ones your clients use spreads the work thin. And paying for content without any reporting leaves you guessing whether it's helping." },
+
+      { type: 'faq', heading: 'Frequently Asked Questions', items: [
+        { q: 'Is outsourcing content marketing worth it for a small business?', a: 'For most, yes. You get steady content and a full set of skills without hiring, and you get your own time back for clients.' },
+        { q: 'How much does it cost?', a: 'It depends on how much content and support you need. A plan with a professional is usually a fraction of what a full-time marketing hire costs, and a good provider will give you clear pricing before you commit.' },
+        { q: 'How long before I see results?', a: 'Social media and review activity can show movement within weeks. Blogs and SEO usually take a few months to build momentum, which is why starting sooner matters.' },
+        { q: 'Will the content sound like my business?', a: 'It should. A good provider learns your services, your area, and your voice, and reviews every piece before it’s published.' },
+      ]},
+
+      { type: 'heading', text: "You don't need to build a team to have one" },
+      { type: 'paragraph', text: 'Visibility comes from steady content, and steady content takes time that most owners don’t have. You can try to squeeze it in around everything else, or you can hand it to someone whose full-time job is keeping your business visible. Either way, the businesses that stay consistent are the ones clients find.' },
+
+      { type: 'cta', heading: 'Let us be your marketing team', text: 'Get a content plan built for your business and a professional to run it, at a price that makes sense for a small business.', buttonText: 'Reach Out to Us to Create Your Content Strategy', buttonHref: '/contact' },
+    ],
+  },
+  {
     slug: 'ai-for-small-business-marketing',
     category: 'AI Marketing',
     title: 'AI for Small Business Marketing: A Practical Guide to More Clients',
@@ -110,7 +173,7 @@ export const posts: Post[] = [
       { type: 'paragraph', text: 'This is placeholder body copy. Replace this article with real content about your process, results, or point of view.' },
       { type: 'paragraph', text: 'Add a second paragraph here once the real article is ready.' },
     ],
-    featured: true,
+    featured: false,
   },
   {
     slug: 'placeholder-post-3',
@@ -124,6 +187,6 @@ export const posts: Post[] = [
       { type: 'paragraph', text: 'This is placeholder body copy. Replace this article with real content about your process, results, or point of view.' },
       { type: 'paragraph', text: 'Add a second paragraph here once the real article is ready.' },
     ],
-    featured: true,
+    featured: false,
   },
 ]
