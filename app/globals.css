@@ -24,7 +24,12 @@
   --color-cloud:     #EDEFE7;
   --color-cloud-dim: #93A29A;
 
-  /* Fonts (vars injected by next/font in layout.tsx) */
+  /* Fonts — loaded via <link> in layout.tsx's <head> (not next/font, which
+     fetches Google Fonts metadata at build time and is unreliable on some
+     hosts' build containers) */
+  --font-bricolage: 'Bricolage Grotesque', sans-serif;
+  --font-manrope:   'Manrope', sans-serif;
+  --font-jetbrains: 'JetBrains Mono', monospace;
   --font-display: var(--font-bricolage);
   --font-body:    var(--font-manrope);
   --font-mono:    var(--font-jetbrains);
