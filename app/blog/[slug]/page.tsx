@@ -31,12 +31,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <JsonLd data={articleSchema(post)} />
       <section style={{ background: '#04070C', padding: '160px 24px 60px' }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
-          <Link href="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: '#93A29A', textDecoration: 'none', fontSize: '0.875rem', marginBottom: 32 }}>
+          <Link href="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: '#93A29A', textDecoration: 'none', fontSize: '0.875rem', marginBottom: 40 }}>
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M11 7H3M3 7l4-4M3 7l4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
             Back to Blog
           </Link>
-          <span style={{ display: 'inline-block', background: '#C8F14B', color: '#04070C', fontFamily: 'var(--font-jetbrains),monospace', fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', borderRadius: 100, padding: '6px 12px', marginBottom: 20 }}>{post.category}</span>
           <h1 style={{ fontFamily: 'var(--font-bricolage),sans-serif', fontWeight: 800, fontSize: 'clamp(2rem,4.5vw,3rem)', letterSpacing: '-0.02em', lineHeight: 1.1, color: '#EDEFE7', marginBottom: 20 }}>{post.title}</h1>
+          <span style={{ display: 'inline-block', background: '#C8F14B', color: '#04070C', fontFamily: 'var(--font-jetbrains),monospace', fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', borderRadius: 100, padding: '6px 12px', marginBottom: 20 }}>{post.category}</span>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontFamily: 'var(--font-jetbrains),monospace', fontSize: '0.7rem', letterSpacing: '0.06em', textTransform: 'uppercase', color: '#5B6560' }}>
             <span>{post.date}</span><span>·</span><span>{post.readTime}</span>
           </div>
