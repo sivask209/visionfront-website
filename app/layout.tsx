@@ -4,10 +4,10 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'VisionFront AI Solutions — Cinematic Video, AI Ads & Web Design',
+  title: 'VisionFront AI Solutions — SEO & Local Marketing for Small Business',
   description:
-    'VisionFront AI Solutions produces cinematic property and store walkthrough videos, AI-generated video ads, and premium websites for brands that want to look like the market leader.',
-  keywords: 'cinematic walkthrough video, AI video ads, premium web design, VisionFront',
+    'VisionFront AI Solutions helps small businesses get found online through SEO, local search, social media, and AI search, and turns that visibility into a steady flow of new clients.',
+  keywords: 'SEO agency, local SEO, small business marketing, organic growth, Google Business Profile, VisionFront',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

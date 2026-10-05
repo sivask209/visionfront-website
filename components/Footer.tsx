@@ -11,23 +11,18 @@ const navLinks = [
   { href: '/contact',  label: 'Contact' },
 ]
 
-const portfolioLinks = [
-  { href: 'https://adsportfolio.visionfrontai.com/', label: 'Ads Portfolio' },
-  { href: 'https://portfolio.visionfrontai.com/',    label: 'Portfolio' },
-]
-
 export default function Footer() {
   return (
     <footer style={{ background: '#04070C', borderTop: '1px solid rgba(237,239,231,0.08)', padding: '72px 24px 36px' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1.6fr 1fr 1fr 1.3fr', gap: 48, marginBottom: 56 }} className="footer-grid">
+        <div style={{ display: 'grid', gridTemplateColumns: '1.6fr 1fr 1.3fr', gap: 48, marginBottom: 56 }} className="footer-grid">
 
           {/* Brand */}
           <div>
             <Image src="/logo.png" alt="VisionFront AI Solutions" width={190} height={52} style={{ height: 46, width: 'auto', marginBottom: 20 }} />
             <p style={{ color: '#93A29A', fontSize: '0.9375rem', lineHeight: 1.78, maxWidth: 250, marginBottom: 28 }}>
-              Building intelligent AI systems that turn small businesses into 24/7 growth machines.
+              Helping small businesses get found online and win more clients, organically.
             </p>
             <div style={{ display: 'flex', gap: 10 }}>
               <a href="https://facebook.com/visionfrontai" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
@@ -55,20 +50,6 @@ export default function Footer() {
                   onMouseLeave={e => (e.currentTarget.style.color = '#93A29A')}>
                   {label}
                 </Link>
-              ))}
-            </nav>
-          </div>
-
-          {/* Portfolio */}
-          <div>
-            <h4 style={{ fontFamily: 'var(--font-bricolage), sans-serif', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#EDEFE7', marginBottom: 20 }}>Portfolio</h4>
-            <nav style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-              {portfolioLinks.map(({ href, label }) => (
-                <a key={href} href={href} target="_blank" rel="noopener noreferrer" style={{ color: '#93A29A', textDecoration: 'none', fontSize: '0.9375rem', transition: 'color 0.22s ease' }}
-                  onMouseEnter={e => (e.currentTarget.style.color = '#C8F14B')}
-                  onMouseLeave={e => (e.currentTarget.style.color = '#93A29A')}>
-                  {label} ↗
-                </a>
               ))}
             </nav>
           </div>

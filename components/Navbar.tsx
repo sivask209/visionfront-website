@@ -1,42 +1,21 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
-// Order: Home, Services, Portfolio (dropdown, rendered between the two groups), Blog, About, Contact
-const linksBeforePortfolio = [
+const links = [
   { href: '/',         label: 'Home' },
   { href: '/services', label: 'Services' },
-]
-const linksAfterPortfolio = [
   { href: '/blog',     label: 'Blog' },
   { href: '/about',    label: 'About' },
   { href: '/contact',  label: 'Contact' },
 ]
-const portfolioLinks = [
-  { href: 'https://adsportfolio.visionfrontai.com/', label: 'Ads Portfolio' },
-  { href: 'https://portfolio.visionfrontai.com/',    label: 'Portfolio' },
-]
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen]       = useState(false)
-  const [portfolioOpen, setPortfolioOpen] = useState(false)
-  const pathname                      = usePathname()
-  const portfolioRef                  = useRef<HTMLDivElement>(null)
-
-  useEffect(() => { setMenuOpen(false); setPortfolioOpen(false) }, [pathname])
-
-  useEffect(() => {
-    function onClick(e: MouseEvent) {
-      if (portfolioRef.current && !portfolioRef.current.contains(e.target as Node)) {
-        setPortfolioOpen(false)
-      }
-    }
-    document.addEventListener('mousedown', onClick)
-    return () => document.removeEventListener('mousedown', onClick)
-  }, [])
+  const [menuOpen, setMenuOpen] = useState(false)
+  const pathname                = usePathname()
 
   return (
     <>
@@ -65,90 +44,7 @@ export default function Navbar() {
 
           {/* Desktop links */}
           <div className="nav-links-desktop" style={{ display: 'flex', alignItems: 'center', gap: 30 }}>
-            {linksBeforePortfolio.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                style={{
-                  color: pathname === href ? '#EDEFE7' : '#93A29A',
-                  fontFamily: 'var(--font-manrope), sans-serif',
-                  fontWeight: 500,
-                  fontSize: '0.9375rem',
-                  textDecoration: 'none',
-                  transition: 'color 0.25s ease',
-                }}
-                onMouseEnter={e => (e.currentTarget.style.color = '#EDEFE7')}
-                onMouseLeave={e => (e.currentTarget.style.color = pathname === href ? '#EDEFE7' : '#93A29A')}
-              >
-                {label}
-              </Link>
-            ))}
-
-            {/* Portfolio dropdown */}
-            <div ref={portfolioRef} style={{ position: 'relative' }}>
-              <button
-                onClick={() => setPortfolioOpen(o => !o)}
-                aria-haspopup="true"
-                aria-expanded={portfolioOpen}
-                style={{
-                  display: 'flex', alignItems: 'center', gap: 6,
-                  background: 'none', border: 'none', cursor: 'pointer', padding: 0,
-                  color: portfolioOpen ? '#EDEFE7' : '#93A29A',
-                  fontFamily: 'var(--font-manrope), sans-serif',
-                  fontWeight: 500,
-                  fontSize: '0.9375rem',
-                  transition: 'color 0.25s ease',
-                }}
-                onMouseEnter={e => (e.currentTarget.style.color = '#EDEFE7')}
-                onMouseLeave={e => (e.currentTarget.style.color = portfolioOpen ? '#EDEFE7' : '#93A29A')}
-              >
-                Portfolio
-                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true" style={{ transform: portfolioOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.25s ease' }}>
-                  <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-              <div
-                role="menu"
-                style={{
-                  position: 'absolute',
-                  top: 'calc(100% + 16px)',
-                  left: '50%',
-                  transform: `translateX(-50%) translateY(${portfolioOpen ? '0' : '-6px'})`,
-                  minWidth: 190,
-                  background: '#0C1721',
-                  border: '1px solid rgba(237,239,231,0.1)',
-                  borderRadius: 16,
-                  padding: 8,
-                  boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
-                  opacity: portfolioOpen ? 1 : 0,
-                  visibility: portfolioOpen ? 'visible' : 'hidden',
-                  transition: 'opacity 0.2s ease, transform 0.2s ease, visibility 0.2s',
-                }}
-              >
-                {portfolioLinks.map(({ href, label }) => (
-                  <a
-                    key={href}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    role="menuitem"
-                    style={{
-                      display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                      padding: '10px 14px', borderRadius: 10,
-                      color: '#EDEFE7', fontSize: '0.9rem', textDecoration: 'none',
-                      transition: 'background 0.2s ease, color 0.2s ease',
-                    }}
-                    onMouseEnter={e => { e.currentTarget.style.background = 'rgba(200,241,75,0.1)'; e.currentTarget.style.color = '#C8F14B' }}
-                    onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#EDEFE7' }}
-                  >
-                    {label}
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3.5 8.5l5-5M4 3.5h4.5V8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {linksAfterPortfolio.map(({ href, label }) => (
+            {links.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
@@ -232,10 +128,11 @@ export default function Navbar() {
         border: menuOpen ? '1px solid rgba(237,239,231,0.08)' : 'none',
       }}>
         <div style={{ padding: '20px 28px', display: 'flex', flexDirection: 'column', gap: 4 }}>
-          {linksBeforePortfolio.map(({ href, label }) => (
+          {links.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
+              onClick={() => setMenuOpen(false)}
               style={{
                 color: pathname === href ? '#C8F14B' : '#93A29A',
                 fontSize: '1.05rem',
@@ -248,29 +145,7 @@ export default function Navbar() {
               {label}
             </Link>
           ))}
-          <p style={{ fontFamily: 'var(--font-jetbrains),monospace', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#5B6560', padding: '14px 0 6px' }}>Portfolio</p>
-          {portfolioLinks.map(({ href, label }) => (
-            <a key={href} href={href} target="_blank" rel="noopener noreferrer" style={{ color: '#93A29A', fontSize: '1rem', fontWeight: 500, textDecoration: 'none', padding: '8px 0', borderBottom: '1px solid rgba(237,239,231,0.08)' }}>
-              {label} ↗
-            </a>
-          ))}
-          {linksAfterPortfolio.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              style={{
-                color: pathname === href ? '#C8F14B' : '#93A29A',
-                fontSize: '1.05rem',
-                fontWeight: 500,
-                textDecoration: 'none',
-                padding: '10px 0',
-                borderBottom: '1px solid rgba(237,239,231,0.08)',
-              }}
-            >
-              {label}
-            </Link>
-          ))}
-          <Link href="/contact" className="btn-primary" style={{ justifyContent: 'center', padding: 13, marginTop: 16 }}>Get a Quote</Link>
+          <Link href="/contact" onClick={() => setMenuOpen(false)} className="btn-primary" style={{ justifyContent: 'center', padding: 13, marginTop: 16 }}>Get a Quote</Link>
         </div>
       </div>
 
