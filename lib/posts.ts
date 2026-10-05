@@ -20,6 +20,79 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: 'small-business-not-showing-up-on-google',
+    category: 'Local SEO',
+    title: "Why Your Small Business Isn’t Showing Up on Google",
+    excerpt: 'Not showing up on Google or Bing? Learn the most common reasons small businesses stay invisible online and how to fix them.',
+    date: 'Oct 5, 2026',
+    readTime: '9 min read',
+    image: '/blog/small-business-not-showing-up-on-google.jpg',
+    featured: true,
+    body: [
+      { type: 'paragraph', text: 'Try this tonight. Open Google, type in the service you offer and your city, and scroll. If you run a law firm, search for a family lawyer near you. If you sell homes, search for a realtor in your town. Count how many competitors appear before you do, or whether you appear at all.' },
+      { type: 'paragraph', text: "If you can’t find your own business, your customers can’t either. That’s the situation behind a small business not showing up on Google, and it’s more common than most owners realize. The good news is that the causes are usually specific and fixable. Below are the four we see most often, what to do about each, and why the work tends to stall when you’re also running the company." },
+
+      { type: 'heading', text: 'How people actually find local businesses' },
+      { type: 'paragraph', text: "Most people don’t browse for a local provider. They search a service plus a place, like “estate planning attorney Cincinnati,” or they type “near me” and let their phone fill in the location. Then they pick from whatever shows up first." },
+      { type: 'paragraph', text: 'Those results come in layers. A map section appears at the top for many local searches, followed by regular website results. For some searches, an AI-generated summary now sits above both. Being missing from any of these layers means leads you never knew about went to someone else.' },
+      { type: 'paragraph', text: "Bing deserves a mention too. Plenty of owners ignore it, but it supplies results to other search products as well, and it has its own business listing system. If you only focus on Google, you’re leaving part of the audience unserved." },
+
+      { type: 'heading', text: 'Reason 1: your Google Business Profile is missing or incomplete' },
+      { type: 'paragraph', text: 'The Google Business Profile is the listing that feeds the map results, and it’s often the fastest place to gain ground. An unclaimed profile, or one with half the fields empty, rarely shows up when people search nearby.' },
+      { type: 'paragraph', text: "Start by claiming it and checking that the basics are right: your business name, the correct categories, your service area, your hours, and a working phone number. Add real photos of your office, your team, or your work. List your services in detail. Then keep it active with updates and new photos, since a profile nobody touches looks stale." },
+      { type: 'paragraph', text: 'Do the same on Bing. Microsoft has its own business listing tool, and most small businesses skip it entirely. A complete Bing profile takes less than an hour and puts you in front of people your competitors aren’t reaching.' },
+
+      { type: 'heading', text: 'Reason 2: your website doesn’t say what you do or where' },
+      { type: 'paragraph', text: 'Search engines can only show what they understand. A site with a home page and one "Services" page that lists everything in a single paragraph gives them very little to work with.' },
+      { type: 'paragraph', text: "A stronger setup gives each service its own page. A family law firm would have separate pages for divorce, custody, and child support. A realtor would have pages for buying, selling, and each neighborhood or city served. Each page explains the service in plain language, mentions the location, and answers the questions clients really ask. An FAQ page helps too, since those questions are often the exact words people type into search." },
+      { type: 'paragraph', text: 'Check the basics while you’re at it. Your site should load quickly, look right on a phone, and use a secure connection. Visitors leave slow or broken pages, and search engines notice.' },
+
+      { type: 'heading', text: 'Reason 3: you don’t publish fresh content' },
+      { type: 'paragraph', text: 'A website that hasn’t changed in two years looks closed. Search engines lean toward businesses that stay active and answer real questions, and visitors form the same impression within seconds.' },
+      { type: 'paragraph', text: 'Fresh content gives you more chances to be found. Each helpful post or page can show up for a different search, and together they build a picture of a business that knows its field. We covered what a realistic publishing plan looks like in our guide to a simple content plan for businesses without a marketing team, so we won’t repeat it all here. The short version: steady beats occasional, and useful beats long.' },
+
+      { type: 'cta', heading: 'Not sure which of these is holding you back?', text: "We’ll run a full audit of your online visibility, covering your website, Google and Bing profiles, listings, and reviews, and send you a report with a visibility score out of 100. It’s free.", buttonText: 'Get Your Free Online Visibility Audit', buttonHref: '/contact' },
+
+      { type: 'heading', text: 'Reason 4: your reviews and business details are weak or inconsistent' },
+      { type: 'paragraph', text: 'Reviews do two jobs. They persuade people who are comparing you with a competitor, and they signal to search engines that real customers know your business. A handful of old reviews, or none, weakens both.' },
+      { type: 'paragraph', text: 'The fix is a habit, not a campaign. Ask every happy client for a review right after the job is done, make it easy with a direct link, and reply to every review you get, including the critical ones. A calm, professional reply to a bad review often does more for your reputation than the review itself does against it.' },
+      { type: 'paragraph', text: 'Consistency matters just as much. If your business is listed as "Smith & Daniels Law" on one site, "Smith and Daniels, LLC" on another, and has an old phone number on a third, search engines lose confidence about which details are right. Check your name, address, and phone number across the main directories and make them match exactly.' },
+
+      { type: 'heading', text: 'Why fixing this yourself often stalls' },
+      { type: 'paragraph', text: "None of these fixes is difficult on its own. The trouble is that there are many of them, and each needs regular attention. You fix the Google profile on a quiet Tuesday, mean to write the service pages next week, and then a big case or a busy closing season arrives. Months later the rest is still on the list." },
+      { type: 'paragraph', text: "That’s not a character flaw. It’s what happens when visibility work competes with the work that pays your bills. And some steps are worth doing yourself right now, like claiming your profiles and asking recent clients for reviews. Those take an hour or two and cost nothing. The ongoing parts, like regular content, listing upkeep, and tracking what’s working, are where help tends to pay off." },
+
+      { type: 'heading', text: 'What a professional does differently' },
+      { type: 'paragraph', text: 'A professional starts by finding the biggest gaps instead of guessing. That’s the purpose of a visibility audit: a look at your whole online presence in one pass, so you know what’s holding you back before you spend a dollar fixing the wrong thing.' },
+      { type: 'paragraph', text: 'At VisionFront AI, we built our audit to do exactly that. We review your online visibility end to end and send you a written report with a visibility score out of 100, so you can see where you stand and what to fix first. Many owners find the score useful on its own, since it turns a vague worry into a number you can track over time.' },
+      { type: 'paragraph', text: 'After the audit, the work becomes a routine instead of a pile. Content gets published on a schedule, profiles stay current, reviews get requested and answered, and the results get tracked by what matters to you: calls, form submissions, and map views, not just rankings. AI-assisted production helps us do this at a price that fits a small business, and a person reviews everything before it goes live.' },
+
+      { type: 'heading', text: 'A quick local visibility checklist' },
+      { type: 'paragraph', text: 'If you want to start today, here’s a short list you can work through yourself:' },
+      { type: 'list', items: [
+        'Claim and complete your Google Business Profile',
+        'Claim and complete your Bing Places listing',
+        'Check that your business name, address, and phone number match across directories',
+        'Give each of your main services its own page on your website',
+        'Ask your last five happy clients for a review',
+        'Publish something helpful on a regular schedule, even if it’s small',
+      ]},
+      { type: 'paragraph', text: 'Finish that list and you’ll be ahead of many local competitors. If you want to know what’s still missing after that, the audit will show you.' },
+
+      { type: 'faq', heading: 'Frequently Asked Questions', items: [
+        { q: 'Why is my business not showing up on Google?', a: 'The most common causes are an incomplete or unclaimed Google Business Profile, a website that doesn’t clearly state your services and location, little fresh content, and weak or inconsistent reviews and listings. Often it’s a mix of these.' },
+        { q: 'How long does local SEO take to work?', a: 'Profile and review improvements can show results within weeks. Website and content work usually takes a few months to build momentum. It varies by location and competition.' },
+        { q: 'Do I need to be on Bing too?', a: 'It’s worth the effort. Setting up a Bing business listing is quick, and it reaches people who don’t use Google as their main search tool.' },
+        { q: 'Can anyone guarantee a first-page ranking?', a: 'No. Search engines decide rankings, and no one outside them controls the results. Be wary of any provider who promises a specific position. What a good provider can do is improve the things you control, such as your profiles, content, reviews, and consistency, and show you the progress.' },
+      ]},
+
+      { type: 'heading', text: 'Being easy to find is a choice' },
+      { type: 'paragraph', text: 'Most visibility problems come down to a handful of gaps, and most of them can be closed. You can start this week by claiming your profiles and asking for reviews. And if you’d rather see exactly where you stand before deciding what to do, we’ll show you.' },
+
+      { type: 'cta', heading: 'See what’s keeping you off page one', text: 'Get a free online visibility audit with a score out of 100 and a clear plan for getting found by more local clients.', buttonText: 'Get Your Free Online Visibility Audit', buttonHref: '/contact' },
+    ],
+  },
+  {
     slug: 'content-plan-for-small-business',
     category: 'Content Marketing',
     title: 'A Simple Content Plan for Businesses Without a Marketing Team',
