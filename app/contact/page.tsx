@@ -49,10 +49,10 @@ export default function ContactPage() {
         <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 24 }}><span className="eyebrow">Let&apos;s Talk</span></div>
           <h1 style={{ fontFamily: 'var(--font-bricolage),sans-serif', fontWeight: 800, fontSize: 'clamp(2.4rem,6vw,4rem)', letterSpacing: '-0.04em', lineHeight: 1.0, color: '#EDEFE7', marginBottom: 24 }}>
-            Start Your <span className="g-text">AI Journey</span>
+            Start with a <span className="g-text">free SEO audit</span>
           </h1>
           <p style={{ color: '#93A29A', fontSize: '1.1rem', lineHeight: 1.78, maxWidth: 500, margin: '0 auto' }}>
-            Book a free strategy call or drop us a message. We&apos;ll get back to you within 24 hours.
+            Request a free audit or send us a message. Tell us your city and services, and we&apos;ll get back to you within 24 hours.
           </p>
         </div>
       </section>
@@ -65,10 +65,10 @@ export default function ContactPage() {
           <div>
             <div style={{ display: 'flex', marginBottom: 20 }}><span className="eyebrow">Contact</span></div>
             <h2 style={{ fontFamily: 'var(--font-bricolage),sans-serif', fontWeight: 700, fontSize: 'clamp(1.6rem,3vw,2.2rem)', letterSpacing: '-0.03em', lineHeight: 1.15, color: '#EDEFE7', marginBottom: 20 }}>
-              We&apos;d love to hear about your business.
+              Tell us where you want to be found.
             </h2>
             <p style={{ color: '#93A29A', lineHeight: 1.8, fontSize: '0.9625rem', marginBottom: 40 }}>
-              Whether you&apos;re ready to get started or just exploring what AI can do, we&apos;re here to help. Reach out and we&apos;ll build a custom plan around your specific goals.
+              Whether you are ready to get started or just want to know where your visibility stands, reach out. We&apos;ll review your online presence and suggest a clear plan for your goals.
             </p>
 
             {/* Email */}
@@ -135,7 +135,7 @@ export default function ContactPage() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} noValidate>
-                <h3 style={{ fontFamily: 'var(--font-bricolage),sans-serif', fontWeight: 700, fontSize: '1.3rem', letterSpacing: '-0.02em', color: '#EDEFE7', marginBottom: 32 }}>Send Us a Message</h3>
+                <h3 style={{ fontFamily: 'var(--font-bricolage),sans-serif', fontWeight: 700, fontSize: '1.3rem', letterSpacing: '-0.02em', color: '#EDEFE7', marginBottom: 32 }}>Request Your Free SEO Audit</h3>
 
                 {/* Name row */}
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }} className="name-grid">
@@ -194,7 +194,7 @@ export default function ContactPage() {
                   <textarea
                     id="message"
                     name="message"
-                    placeholder="Tell us about your business and what you're looking to achieve..."
+                    placeholder="Tell us your business, your city, and what you want more of: calls, bookings, or new customers..."
                     value={form.message}
                     onChange={handleChange}
                     required
@@ -230,7 +230,7 @@ export default function ContactPage() {
             Prefer to book a call <span className="g-text">directly?</span>
           </h2>
           <p style={{ color: '#93A29A', fontSize: '1rem', lineHeight: 1.78, marginBottom: 32 }}>
-            Skip the form and book a free 30-minute strategy call where we&apos;ll map out exactly what AI can do for your business.
+            Skip the form and book a free 30-minute call. We&apos;ll review your online presence together and map out your next steps.
           </p>
           <Link href="/services" className="btn-ghost" style={{ padding: '13px 32px' }}>View Our Services</Link>
         </div>
