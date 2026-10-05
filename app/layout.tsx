@@ -2,12 +2,32 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { SITE } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: 'VisionFront AI Solutions — SEO & Local Marketing for Small Business',
-  description:
-    'VisionFront AI Solutions helps small businesses get found online through SEO, local search, social media, and AI search, and turns that visibility into a steady flow of new clients.',
-  keywords: 'SEO agency, local SEO, small business marketing, organic growth, Google Business Profile, VisionFront',
+  metadataBase: new URL(SITE.url),
+  title: {
+    default: 'VisionFront AI Solutions | SEO & Local Marketing for Small Business',
+    template: '%s | VisionFront AI Solutions',
+  },
+  description: SITE.description,
+  keywords: ['SEO agency', 'local SEO', 'small business marketing', 'organic growth', 'Google Business Profile', 'AI search optimization'],
+  openGraph: {
+    type: 'website',
+    siteName: SITE.name,
+    locale: 'en_US',
+    url: SITE.url,
+    title: 'VisionFront AI Solutions | SEO & Local Marketing for Small Business',
+    description: SITE.description,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'VisionFront AI Solutions | SEO & Local Marketing for Small Business',
+    description: SITE.description,
+  },
+  verification: process.env.GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+    : undefined,
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

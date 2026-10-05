@@ -1,4 +1,17 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
+import JsonLd from '@/components/JsonLd'
+import { faqSchema, servicesSchema } from '@/lib/seo'
+
+export const metadata: Metadata = {
+  title: 'SEO Services for Small Business',
+  description:
+    'SEO audits, ongoing SEO, local SEO, social media, AI search optimization, content, websites, and reviews. Organic growth for small businesses, with no paid ads required.',
+  alternates: { canonical: '/services' },
+}
+
+const anchorFor = (title: string) =>
+  title.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 
 const services = [
   {
@@ -143,6 +156,7 @@ const faqs = [
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd data={[servicesSchema(services.map(({ title, desc }) => ({ name: title, description: desc }))), faqSchema(faqs)]} />
       {/* ── PAGE HERO ── */}
       <section style={{ background: '#04070C', padding: '160px 24px 100px', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '-20%', left: '-10%', width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle,rgba(34,59,60,0.5) 0%,transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none' }} />
@@ -161,7 +175,7 @@ export default function ServicesPage() {
       <section style={{ background: '#070D16', padding: '100px 24px' }}>
         <div style={{ maxWidth: 1180, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 28 }}>
           {services.map(({ num, title, tagline, desc, features, bestFor }) => (
-            <div key={title} className="glass" style={{ padding: '44px 46px' }}>
+            <div key={title} id={anchorFor(title)} className="glass" style={{ padding: '44px 46px', scrollMarginTop: 120 }}>
               <div className="service-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'start' }}>
                 <div>
                   <div style={{ fontFamily: 'var(--font-jetbrains),monospace', fontSize: '0.72rem', letterSpacing: '0.15em', color: '#C8F14B', marginBottom: 12 }}>{num}</div>
@@ -267,6 +281,7 @@ export default function ServicesPage() {
           <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" className="btn-primary" style={{ padding: '15px 34px', fontSize: '1rem' }}>Get a Free SEO Audit</Link>
             <Link href="/pricing" className="btn-ghost" style={{ padding: '15px 34px', fontSize: '1rem' }}>View Pricing</Link>
+            <Link href="/blog" className="btn-ghost" style={{ padding: '15px 34px', fontSize: '1rem' }}>Read Our Guides</Link>
           </div>
         </div>
       </section>

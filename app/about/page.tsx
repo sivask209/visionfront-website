@@ -1,4 +1,12 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'About Us',
+  description:
+    'VisionFront AI is a marketing and SEO agency for small businesses. Learn how we help local businesses get found online and win more clients, organically.',
+  alternates: { canonical: '/about' },
+}
 
 const values = [
   { title: 'Organic First', desc: 'We grow your visibility through search, local listings, social, content, and reviews, not through ad spend that stops when the budget does.' },

@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { posts } from '@/lib/posts'
+import JsonLd from '@/components/JsonLd'
+import { articleSchema } from '@/lib/seo'
 
 export function generateStaticParams() {
   return posts.map(p => ({ slug: p.slug }))
@@ -9,7 +11,14 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const post = posts.find(p => p.slug === slug)
-  return { title: post ? `${post.title} — VisionFront AI Solutions` : 'Article — VisionFront AI Solutions' }
+  if (!post) return { title: 'Article' }
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical: `/blog/${post.slug}` },
+    robots: post.title.startsWith('[Placeholder]') ? { index: false, follow: true } : undefined,
+    openGraph: { type: 'article', title: post.title, description: post.excerpt, url: `/blog/${post.slug}`, images: [post.image] },
+  }
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -19,6 +28,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <>
+      <JsonLd data={articleSchema(post)} />
       <section style={{ background: '#04070C', padding: '160px 24px 60px' }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <Link href="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: '#93A29A', textDecoration: 'none', fontSize: '0.875rem', marginBottom: 32 }}>
@@ -36,7 +46,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <section style={{ background: '#F7F6F1', padding: '56px 24px 100px' }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <div style={{ borderRadius: 24, overflow: 'hidden', marginBottom: 44 }}>
-            <img src={post.image} alt="" style={{ width: '100%', display: 'block' }} />
+            <img src={post.image} alt={post.title} style={{ width: '100%', display: 'block' }} />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
             {post.body.map((block, i) => {

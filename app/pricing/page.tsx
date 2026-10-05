@@ -1,4 +1,14 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
+import JsonLd from '@/components/JsonLd'
+import { faqSchema } from '@/lib/seo'
+
+export const metadata: Metadata = {
+  title: 'SEO Packages and Pricing',
+  description:
+    'Compare VisionFront AI organic SEO packages for small businesses: Local Foundation, Growth, and Complete. Start with a free SEO audit.',
+  alternates: { canonical: '/pricing' },
+}
 
 // TODO: Replace each price with confirmed monthly pricing before launch.
 // Keep 'TBD' until real numbers are final so no unverified price goes live.
@@ -75,6 +85,7 @@ const faqs = [
 export default function PricingPage() {
   return (
     <>
+      <JsonLd data={faqSchema(faqs)} />
       {/* ── PAGE HERO ── */}
       <section style={{ background: '#04070C', padding: '160px 24px 100px', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '-25%', left: '50%', transform: 'translateX(-50%)', width: 700, height: 500, borderRadius: '50%', background: 'radial-gradient(circle,rgba(34,59,60,0.45) 0%,transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none' }} />
@@ -109,7 +120,7 @@ export default function PricingPage() {
                   </div>
                 )}
 
-                <p style={{ fontFamily: 'var(--font-jetbrains),monospace', fontSize: '0.7rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#C8F14B', marginBottom: 12 }}>{name}</p>
+                <h2 style={{ fontFamily: 'var(--font-jetbrains),monospace', fontWeight: 400, fontSize: '0.7rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#C8F14B', marginBottom: 12 }}>{name}</h2>
 
                 <div style={{ display: 'flex', alignItems: 'flex-end', gap: 6, marginBottom: 8 }}>
                   {/* TODO: replace TBD with the confirmed monthly price */}

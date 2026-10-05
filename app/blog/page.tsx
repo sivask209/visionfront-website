@@ -2,8 +2,9 @@ import Link from 'next/link'
 import { posts } from '@/lib/posts'
 
 export const metadata = {
-  title: 'Blog — VisionFront AI Solutions',
-  description: 'Practical AI ideas for growing small businesses — lead capture, automation, content, and web design from VisionFront AI Solutions.',
+  title: 'Blog',
+  description: 'Practical guides on SEO, local search, content, and organic growth for small businesses from VisionFront AI Solutions.',
+  alternates: { canonical: '/blog' },
 }
 
 const POSTS_PER_PAGE = 9
@@ -38,7 +39,7 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
             {pagePosts.map(({ slug, category, title, excerpt, date, readTime, image }) => (
               <Link key={slug} href={`/blog/${slug}`} className="card-light" style={{ display: 'block', textDecoration: 'none', overflow: 'hidden', padding: 0 }}>
                 <div style={{ position: 'relative', aspectRatio: '3/2', overflow: 'hidden' }}>
-                  <img src={image} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img src={image} alt={title} loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   <span style={{ position: 'absolute', top: 16, left: 16, background: '#C8F14B', color: '#04070C', fontFamily: 'var(--font-jetbrains),monospace', fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', borderRadius: 100, padding: '6px 12px' }}>{category}</span>
                 </div>
                 <div style={{ padding: '26px 26px 30px' }}>

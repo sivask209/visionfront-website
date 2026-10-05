@@ -1,5 +1,7 @@
 export const metadata = {
-  title: 'Terms of Service — VisionFront AI Solutions',
+  title: 'Terms of Service',
+  description: 'Terms of service for VisionFront AI Solutions.',
+  alternates: { canonical: '/terms' },
 }
 
 const sections = [

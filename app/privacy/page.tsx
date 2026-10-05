@@ -1,5 +1,7 @@
 export const metadata = {
-  title: 'Privacy Policy — VisionFront AI Solutions',
+  title: 'Privacy Policy',
+  description: 'How VisionFront AI Solutions collects, uses, and protects your personal information.',
+  alternates: { canonical: '/privacy' },
 }
 
 const sections = [

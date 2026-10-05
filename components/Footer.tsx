@@ -42,7 +42,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 style={{ fontFamily: 'var(--font-bricolage), sans-serif', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#EDEFE7', marginBottom: 20 }}>Navigation</h4>
+            <h2 style={{ fontFamily: 'var(--font-bricolage), sans-serif', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#EDEFE7', marginBottom: 20 }}>Navigation</h2>
             <nav style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {navLinks.map(({ href, label }) => (
                 <Link key={href} href={href} style={{ color: '#93A29A', textDecoration: 'none', fontSize: '0.9375rem', transition: 'color 0.22s ease' }}
@@ -56,7 +56,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 style={{ fontFamily: 'var(--font-bricolage), sans-serif', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#EDEFE7', marginBottom: 20 }}>Get in Touch</h4>
+            <h2 style={{ fontFamily: 'var(--font-bricolage), sans-serif', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#EDEFE7', marginBottom: 20 }}>Get in Touch</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 28 }}>
               <a href="mailto:info@visionfrontai.com" style={{ color: '#93A29A', textDecoration: 'none', fontSize: '0.9375rem', transition: 'color 0.22s' }}
                 onMouseEnter={e => (e.currentTarget.style.color = '#C8F14B')}
@@ -64,7 +64,7 @@ export default function Footer() {
                 info@visionfrontai.com
               </a>
             </div>
-            <h4 style={{ fontFamily: 'var(--font-bricolage), sans-serif', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#EDEFE7', marginBottom: 14 }}>Stay Updated</h4>
+            <h2 style={{ fontFamily: 'var(--font-bricolage), sans-serif', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#EDEFE7', marginBottom: 14 }}>Stay Updated</h2>
             <div style={{ display: 'flex', gap: 8 }}>
               <input type="email" placeholder="your@email.com" aria-label="Email for newsletter"
                 style={{ flex: 1, minWidth: 0, background: 'rgba(237,239,231,0.05)', border: '1px solid rgba(237,239,231,0.15)', borderRadius: 100, padding: '10px 20px', color: '#EDEFE7', fontFamily: 'var(--font-manrope), sans-serif', fontSize: '0.9rem', outline: 'none' }} />

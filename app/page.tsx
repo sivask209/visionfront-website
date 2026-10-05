@@ -1,8 +1,16 @@
-'use client'
-
-import { useEffect } from 'react'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { posts } from '@/lib/posts'
+import { faqSchema, organizationSchema, websiteSchema } from '@/lib/seo'
+import JsonLd from '@/components/JsonLd'
+import RevealObserver from '@/components/RevealObserver'
+
+export const metadata: Metadata = {
+  title: { absolute: 'VisionFront AI Solutions | SEO & Local Marketing for Small Business' },
+  description:
+    'Get found online and win more clients. VisionFront AI Solutions helps small businesses grow through SEO, local search, social media, and AI search, with no paid ads required.',
+  alternates: { canonical: '/' },
+}
 
 const featuredPosts = posts.filter(p => p.featured).slice(0, 3)
 
@@ -51,6 +59,9 @@ const audiences = [
     desc: 'Plumbers, dentists, salons, and other local pros win when they appear first on the map. We help you get there.',
   },
 ]
+
+const serviceAnchor = (title: string) =>
+  title.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 
 const faqs = [
   {
@@ -117,17 +128,6 @@ function SearchMockup() {
 }
 
 export default function HomePage() {
-  useEffect(() => {
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (reduceMotion) return
-    const io = new IntersectionObserver(
-      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
-      { threshold: 0.15 }
-    )
-    document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el))
-    return () => io.disconnect()
-  }, [])
-
   const fadeIn = (delayMs: number): React.CSSProperties => ({
     opacity: 0,
     animation: 'fadeUp 0.45s cubic-bezier(0.22,1,0.36,1) forwards',
@@ -136,6 +136,8 @@ export default function HomePage() {
 
   return (
     <>
+      <JsonLd data={[organizationSchema(), websiteSchema(), faqSchema(faqs)]} />
+      <RevealObserver />
       {/* ── HERO (dark) ── */}
       <section style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', overflow: 'hidden', padding: '150px 24px 0', background: 'linear-gradient(180deg,#04070C 0%,#0F1D22 38%,#24413E 62%,#142530 84%,#070D16 100%)' }}>
         <svg style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 1, opacity: 0.035 }} aria-hidden="true">
@@ -211,11 +213,11 @@ export default function HomePage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 24 }} data-reveal>
             {services.map(({ num, title, desc }) => (
-              <div key={title} className="glass" style={{ padding: '32px 28px' }}>
+              <Link key={title} href={`/services#${serviceAnchor(title)}`} className="glass" style={{ display: 'block', padding: '32px 28px', textDecoration: 'none' }}>
                 <div style={{ fontFamily: 'var(--font-jetbrains),monospace', fontSize: '0.7rem', letterSpacing: '0.1em', color: '#C8F14B', marginBottom: 14 }}>{num}</div>
                 <h3 style={{ fontFamily: 'var(--font-bricolage),sans-serif', fontWeight: 700, fontSize: '1.15rem', letterSpacing: '-0.01em', color: '#EDEFE7', marginBottom: 10 }}>{title}</h3>
                 <p style={{ color: '#93A29A', fontSize: '0.9375rem', lineHeight: 1.72 }}>{desc}</p>
-              </div>
+              </Link>
             ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: 48 }}>
@@ -301,7 +303,7 @@ export default function HomePage() {
             {featuredPosts.map(({ slug, category, title, date, readTime, image }) => (
               <Link key={slug} href={`/blog/${slug}`} className="card-light" style={{ display: 'block', textDecoration: 'none', overflow: 'hidden', padding: 0 }}>
                 <div style={{ position: 'relative', aspectRatio: '3/2', overflow: 'hidden' }}>
-                  <img src={image} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img src={image} alt={title} loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   <span style={{ position: 'absolute', top: 14, left: 14, background: '#C8F14B', color: '#04070C', fontFamily: 'var(--font-jetbrains),monospace', fontSize: '0.62rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', borderRadius: 100, padding: '5px 11px' }}>{category}</span>
                 </div>
                 <div style={{ padding: '22px 22px 26px' }}>
