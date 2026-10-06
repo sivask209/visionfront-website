@@ -4,6 +4,7 @@ export type ContentBlock =
   | { type: 'list'; items: string[] }
   | { type: 'faq'; heading: string; items: { q: string; a: string }[] }
   | { type: 'cta'; heading: string; text: string; buttonText: string; buttonHref: string }
+  | { type: 'related'; label: string; href: string }
 
 export type Post = {
   slug: string
@@ -19,6 +20,104 @@ export type Post = {
 }
 
 export const posts: Post[] = [
+  {
+    slug: 'google-business-profile-optimization',
+    category: 'Local SEO',
+    title: "12 Google Business Profile Settings You’re Probably Ignoring",
+    excerpt: 'Most businesses skip these 12 Google Business Profile settings. Learn what to fix to show up in Google Maps and win more local customers.',
+    date: 'Oct 6, 2026',
+    readTime: '10 min read',
+    image: '/blog/google-business-profile-optimization.jpg',
+    featured: false,
+    body: [
+      { type: 'paragraph', text: 'Think back to the day you claimed your Google Business Profile. You probably typed in your name, address, phone number, and hours, clicked save, and felt done. Maybe you added a photo. Then you never opened it again.' },
+      { type: 'paragraph', text: "You’re in good company. The profile has well over a dozen settings, and most businesses fill in the first few and ignore the rest. That matters, because the ignored fields are often what tell Google what you actually do, and what convince a customer to call you instead of the next listing." },
+      { type: 'paragraph', text: 'This guide to Google Business Profile optimization covers 12 settings worth your time, roughly in order of impact. Most take a few minutes. None cost anything.' },
+
+      { type: 'heading', text: 'Why your profile matters more than you think' },
+      { type: 'paragraph', text: 'For many local searches, the profile appears before any website does. Someone types “estate planning attorney near me” or “realtor in Kansas City,” and the first thing they see is a card with your name, star rating, photos, hours, and a call button. Plenty of people choose from that card without ever visiting your site.' },
+      { type: 'paragraph', text: "So your profile is often your first impression, and sometimes your only one. It’s also a major input for map results. Getting it right is one of the cheapest things a small business can do for local visibility." },
+      { type: 'paragraph', text: "One note before we start: Google moves and renames things in the dashboard fairly often. If a label below doesn’t match what you see, look for the closest equivalent." },
+
+      { type: 'heading', text: 'The 12 settings' },
+
+      { type: 'heading', text: '1. Primary and secondary categories' },
+      { type: 'paragraph', text: 'Your primary category is one of the strongest signals Google has about what your business is. Choose the most specific one that fits. "Family law attorney" says more than "Lawyer," and "Real estate agent" says more than "Business."' },
+      { type: 'paragraph', text: "Then add secondary categories for services you genuinely offer. A firm that also handles estate planning can add that. Don’t pad the list with categories that only sort of apply, because mismatched categories muddy the picture and can send you the wrong searches." },
+
+      { type: 'heading', text: '2. Service areas' },
+      { type: 'paragraph', text: "If you travel to customers or serve a wide region, list the cities and areas you cover. If customers don’t visit your address, such as a home-based business, you can hide it and show only your service area." },
+      { type: 'paragraph', text: "Be accurate here. Listing places you can’t realistically serve invites flags and wasted inquiries. A law firm that meets clients at its office should keep its address visible." },
+
+      { type: 'heading', text: '3. Business description' },
+      { type: 'paragraph', text: 'You get up to 750 characters, but only the first portion shows before someone clicks to read more. Lead with what you do and where you do it. Write it for a person, in plain language.' },
+      { type: 'paragraph', text: 'Something like "We’re a family law firm in Cincinnati helping local families with divorce, custody, and support matters" does the job. Skip links, special offers, and lists of keywords. Google doesn’t allow the first two, and the third reads badly.' },
+
+      { type: 'heading', text: '4. Services list with descriptions' },
+      { type: 'paragraph', text: 'Most owners add a service name and stop. Add a sentence or two for each. A law firm might list divorce, custody, and child support, each with a short explanation of who it’s for. A realtor might list buyer representation, home selling, and relocation help.' },
+      { type: 'paragraph', text: 'This gives Google more to match against searches, and it gives customers a clearer idea of whether you’re the right fit before they call.' },
+
+      { type: 'heading', text: '5. Attributes' },
+      { type: 'paragraph', text: 'Attributes are the small tags that appear on your profile, like online appointments, languages spoken, wheelchair accessible entrance, or ownership details you choose to share. Which ones appear depends on your category.' },
+      { type: 'paragraph', text: "Fill in every one that’s true for your business. Individually they’re minor, but they can be the detail that tips a customer who’s comparing two similar options." },
+
+      { type: 'heading', text: '6. Hours, including special hours' },
+      { type: 'paragraph', text: 'Regular hours are obvious. Special hours are the setting people forget. Holidays, vacations, and one-off closures should all be entered ahead of time, ideally a few weeks before.' },
+      { type: 'paragraph', text: "Wrong hours cost more than they seem to. A customer who drives to a locked door doesn’t come back, and sometimes leaves a bad review about it. If you work by appointment, set hours that reflect when you actually answer the phone." },
+
+      { type: 'heading', text: '7. Appointment link and the right landing page' },
+      { type: 'paragraph', text: 'Your profile has a website link, and many owners point it at the home page by default. For a single-service business that’s fine. For anyone with several services, linking to the most relevant page converts better than making visitors hunt.' },
+      { type: 'paragraph', text: 'If you take bookings or consultations online, add an appointment link too, so a customer can act without calling. And consider adding tracking parameters to the link, so your analytics show how many visits came from the profile.' },
+
+      { type: 'cta', heading: 'Curious how your profile scores?', text: "We’ll audit your Google and Bing profiles along with your website, listings, and reviews, and send you a report with a visibility score out of 100. It’s free.", buttonText: 'Get Your Free Online Visibility Audit', buttonHref: '/contact' },
+
+      { type: 'heading', text: '8. Photos and video by type' },
+      { type: 'paragraph', text: 'Upload photos in the categories the profile offers: logo, cover photo, exterior, interior, team, and your work. Real photos beat stock images every time, and you don’t need a professional photographer. A phone in good light is enough.' },
+      { type: 'paragraph', text: 'Add new photos regularly. A profile whose newest picture is four years old looks like a business that stopped paying attention. A short video is a nice extra if you can manage it.' },
+
+      { type: 'heading', text: '9. Opening date and social links' },
+      { type: 'paragraph', text: 'Two small fields that are almost always empty. The opening date shows how long you’ve been around, which quietly builds trust. Social links give a curious customer another way to check you out before reaching out.' },
+      { type: 'paragraph', text: 'Together they take about two minutes, and they make a profile look finished.' },
+
+      { type: 'heading', text: '10. Review link and replies' },
+      { type: 'paragraph', text: 'Your profile gives you a direct link that lets clients leave a review in a couple of taps. Send it to happy clients right after a job is done, by text or email, while the experience is fresh.' },
+      { type: 'paragraph', text: 'Then reply to every review, good or bad. Keep replies short, polite, and specific. For a critical review, stay calm, offer to talk offline, and never share private details, which matters especially for law firms and anyone handling confidential matters. A steady trickle of recent reviews usually serves you better than a big burst followed by silence.' },
+
+      { type: 'heading', text: '11. Posts and updates' },
+      { type: 'paragraph', text: 'Posts let you share updates, offers, and events right on your profile. Nobody outside Google can say exactly how much weight they carry in rankings, so treat them honestly: they show that your business is active and give visitors something current to read.' },
+      { type: 'paragraph', text: "A short post every week or two is plenty. Share a new service, a seasonal reminder, updated holiday hours, or a new listing if you’re a realtor. If you already write blogs or social posts, you can reuse that content here." },
+      { type: 'related', label: 'AI for Small Business Marketing: A Practical Guide to More Clients', href: '/blog/ai-for-small-business-marketing' },
+
+      { type: 'heading', text: '12. Users, access, and notifications' },
+      { type: 'paragraph', text: 'This one protects everything else. Add a second owner or manager so the profile isn’t stuck behind a single login. If the person who originally set it up was an employee who left, or a freelancer you no longer work with, you want to find out before it becomes a problem.' },
+      { type: 'paragraph', text: 'Review who has access and remove anyone who shouldn’t. Then turn on notifications so new reviews and suggested edits don’t go unnoticed. Other people can suggest changes to your profile, so check now and then that your name, hours, and phone number are still what you entered.' },
+
+      { type: 'heading', text: 'A quick word on Bing Places' },
+      { type: 'paragraph', text: "Bing has its own business listing tool, and it’s easy to overlook. Many of the same fields apply: categories, hours, description, photos, and contact details. If you’ve just finished your Google profile, reusing that information on Bing takes under an hour and puts you in front of searchers your competitors may not be reaching." },
+
+      { type: 'heading', text: 'What a profile can’t fix on its own' },
+      { type: 'paragraph', text: "A perfect profile won’t make up for a thin website, a lack of reviews, or content that hasn’t changed in two years. It’s one piece of local visibility, not the whole thing. We covered the others in our guide to why your small business isn’t showing up on Google and in our content plan for businesses without a marketing team." },
+      { type: 'related', label: "Why Your Small Business Isn’t Showing Up on Google", href: '/blog/small-business-not-showing-up-on-google' },
+      { type: 'related', label: 'A Simple Content Plan for Businesses Without a Marketing Team', href: '/blog/content-plan-for-small-business' },
+      { type: 'paragraph', text: "It also isn’t a one-time job. Hours change, photos age, reviews come in, and Google keeps adjusting the dashboard. The businesses that benefit most are the ones that keep the profile current." },
+
+      { type: 'heading', text: 'Do it yourself or get help?' },
+      { type: 'paragraph', text: 'The one-time setup is very doable on your own. Plan on a few hours to work through the 12 settings. After that, the ongoing work is smaller but constant: a post every week or so, new photos now and then, review requests after each job, and replies to whatever comes in.' },
+      { type: 'paragraph', text: "That’s where many owners slip, not because the tasks are hard but because they compete with the work that pays the bills. If you’d rather see where you stand before deciding, our free audit looks at your profile alongside the rest of your online presence and gives you a score out of 100, so you know what to fix first." },
+
+      { type: 'faq', heading: 'Frequently Asked Questions', items: [
+        { q: 'How do I optimize my Google Business Profile?', a: 'Start with the basics: choose accurate categories, write a clear description, list your services, and keep your hours and contact details correct. Then add photos, ask for reviews, and update the profile regularly.' },
+        { q: 'How often should I post on my Google Business Profile?', a: 'A short post every week or two is a reasonable pace for most small businesses. Consistency matters more than volume.' },
+        { q: 'Can I change my business categories?', a: 'Yes. You can edit your primary and secondary categories at any time. Choose ones that honestly describe what you do, and avoid changing them constantly.' },
+        { q: 'Does my profile affect my ranking in Google Maps?', a: "It’s a major part of how businesses appear in map results, along with reviews, your website, and your location relative to the searcher. No one can guarantee a specific position, but a complete, active profile gives you the best chance of showing up." },
+      ]},
+
+      { type: 'heading', text: 'Small details add up' },
+      { type: 'paragraph', text: "None of these 12 settings is hard, and most of them are free. The reason they matter is that most of your competitors haven’t done them. A complete, current, honest profile quietly beats a half-filled one, and you can start on yours today." },
+
+      { type: 'cta', heading: 'See how your profile compares', text: 'Get a free online visibility audit with a score out of 100 and a clear list of what to fix first.', buttonText: 'Get Your Free Online Visibility Audit', buttonHref: '/contact' },
+    ],
+  },
   {
     slug: 'small-business-not-showing-up-on-google',
     category: 'Local SEO',
@@ -41,6 +140,7 @@ export const posts: Post[] = [
       { type: 'paragraph', text: 'The Google Business Profile is the listing that feeds the map results, and it’s often the fastest place to gain ground. An unclaimed profile, or one with half the fields empty, rarely shows up when people search nearby.' },
       { type: 'paragraph', text: "Start by claiming it and checking that the basics are right: your business name, the correct categories, your service area, your hours, and a working phone number. Add real photos of your office, your team, or your work. List your services in detail. Then keep it active with updates and new photos, since a profile nobody touches looks stale." },
       { type: 'paragraph', text: 'Do the same on Bing. Microsoft has its own business listing tool, and most small businesses skip it entirely. A complete Bing profile takes less than an hour and puts you in front of people your competitors aren’t reaching.' },
+      { type: 'related', label: "12 Google Business Profile Settings You’re Probably Ignoring", href: '/blog/google-business-profile-optimization' },
 
       { type: 'heading', text: 'Reason 2: your website doesn’t say what you do or where' },
       { type: 'paragraph', text: 'Search engines can only show what they understand. A site with a home page and one "Services" page that lists everything in a single paragraph gives them very little to work with.' },
@@ -50,6 +150,7 @@ export const posts: Post[] = [
       { type: 'heading', text: 'Reason 3: you don’t publish fresh content' },
       { type: 'paragraph', text: 'A website that hasn’t changed in two years looks closed. Search engines lean toward businesses that stay active and answer real questions, and visitors form the same impression within seconds.' },
       { type: 'paragraph', text: 'Fresh content gives you more chances to be found. Each helpful post or page can show up for a different search, and together they build a picture of a business that knows its field. We covered what a realistic publishing plan looks like in our guide to a simple content plan for businesses without a marketing team, so we won’t repeat it all here. The short version: steady beats occasional, and useful beats long.' },
+      { type: 'related', label: 'A Simple Content Plan for Businesses Without a Marketing Team', href: '/blog/content-plan-for-small-business' },
 
       { type: 'cta', heading: 'Not sure which of these is holding you back?', text: "We’ll run a full audit of your online visibility, covering your website, Google and Bing profiles, listings, and reviews, and send you a report with a visibility score out of 100. It’s free.", buttonText: 'Get Your Free Online Visibility Audit', buttonHref: '/contact' },
 
@@ -66,6 +167,7 @@ export const posts: Post[] = [
       { type: 'paragraph', text: 'A professional starts by finding the biggest gaps instead of guessing. That’s the purpose of a visibility audit: a look at your whole online presence in one pass, so you know what’s holding you back before you spend a dollar fixing the wrong thing.' },
       { type: 'paragraph', text: 'At VisionFront AI, we built our audit to do exactly that. We review your online visibility end to end and send you a written report with a visibility score out of 100, so you can see where you stand and what to fix first. Many owners find the score useful on its own, since it turns a vague worry into a number you can track over time.' },
       { type: 'paragraph', text: 'After the audit, the work becomes a routine instead of a pile. Content gets published on a schedule, profiles stay current, reviews get requested and answered, and the results get tracked by what matters to you: calls, form submissions, and map views, not just rankings. AI-assisted production helps us do this at a price that fits a small business, and a person reviews everything before it goes live.' },
+      { type: 'related', label: 'AI for Small Business Marketing: A Practical Guide to More Clients', href: '/blog/ai-for-small-business-marketing' },
 
       { type: 'heading', text: 'A quick local visibility checklist' },
       { type: 'paragraph', text: 'If you want to start today, here’s a short list you can work through yourself:' },
@@ -109,12 +211,14 @@ export const posts: Post[] = [
       { type: 'paragraph', text: "Your website is the one marketing asset you fully own. Social platforms can change their rules overnight, but your site stays yours, and it's where most potential clients land before they decide to call." },
       { type: 'paragraph', text: 'Search engines read your content to work out what you do and where you do it. Service pages explain your offer. Location pages tell Google and Bing which cities you serve. FAQ pages answer the questions people type into search before they ever pick up the phone. Without that content, there’s very little for a search engine to show.' },
       { type: 'paragraph', text: "Fresh content matters too. A site with recent posts and updated pages looks like a business that's open and paying attention. A site nobody has touched in two years looks like one that might have closed. Visitors notice, and so do search engines." },
+      { type: 'related', label: "Why Your Small Business Isn’t Showing Up on Google", href: '/blog/small-business-not-showing-up-on-google' },
 
       { type: 'heading', text: 'What a proper content plan actually includes' },
       { type: 'paragraph', text: 'Most owners picture a content plan as "write a blog now and then." A plan that moves the needle has more parts than that.' },
       { type: 'paragraph', text: 'Start with blogs. Publishing three to four posts a week is the ideal if you want steady growth. Each post is another page that can rank, another question answered, and another way for a stranger to find you. The more useful pages you have covering your services and your area, the more searches you can show up for. Even one or two strong posts a week beats nothing, but the pace is what compounds.' },
       { type: 'paragraph', text: "Then there's social media. Posting every day keeps you in front of people who aren't ready to hire yet but will be soon. It also works as a trust check, since plenty of people look at your profile before they contact you. A daily presence doesn't mean daily original work, because one blog post can become several posts, a short video, and an email." },
       { type: 'paragraph', text: 'Beyond those two sit the other pieces of visibility. Your Google Business Profile needs updates and fresh photos. Reviews need to be requested and answered. An email list lets you reach past visitors and clients directly. Short video is earning more reach for local businesses every year, and your business details need to match across directories so search engines trust them.' },
+      { type: 'related', label: "12 Google Business Profile Settings You’re Probably Ignoring", href: '/blog/google-business-profile-optimization' },
       { type: 'paragraph', text: 'None of these pieces works well alone. Blogs feed social posts, social posts drive visits to the site, reviews support local rankings, and email brings people back. Drop one and the others get weaker.' },
 
       { type: 'heading', text: 'The real cost of doing it all yourself' },
@@ -129,6 +233,7 @@ export const posts: Post[] = [
       { type: 'paragraph', text: 'The cost is also easier to plan around. You pay a set monthly amount, with no salaries, benefits, or software subscriptions to manage on your own.' },
       { type: 'paragraph', text: "You also skip the trial and error. A professional already has a process for planning topics, producing content, and tracking what brings in leads. You're not paying for them to figure it out on your time." },
       { type: 'paragraph', text: 'Then there’s consistency, which is the whole game. Publishing on schedule is their job, so it doesn’t slip when your week gets crazy. Modern AI tools make this practical at a reasonable price, because a specialist can produce the drafts, graphics, and scheduling far faster than one person working alone. The key is that a person still reviews everything, adds the local detail, and makes sure it sounds like your business.' },
+      { type: 'related', label: 'AI for Small Business Marketing: A Practical Guide to More Clients', href: '/blog/ai-for-small-business-marketing' },
 
       { type: 'heading', text: 'What to look for in a marketing partner' },
       { type: 'paragraph', text: 'Not every provider is worth hiring, so it helps to ask a few questions before you sign anything.' },
@@ -175,15 +280,18 @@ export const posts: Post[] = [
 
       { type: 'heading', text: 'AI content marketing: show up where clients search' },
       { type: 'paragraph', text: "Content is how new clients find you before they pick up the phone. A useful blog post, a clear service page, or a well-answered FAQ can bring in traffic from Google and Bing for years. The hard part has always been time, because writing regularly is tough when you're also running the company." },
+      { type: 'related', label: "Why Your Small Business Isn’t Showing Up on Google", href: '/blog/small-business-not-showing-up-on-google' },
       { type: 'paragraph', text: 'AI can help you draft service pages, city pages, blog posts, and FAQs built around questions your clients really ask. A family law firm might answer common questions about custody or how long a divorce takes. A realtor might write neighborhood guides and a first-time buyer checklist. Each page gives search engines one more reason to show your business.' },
       { type: 'paragraph', text: 'You can stretch each idea further, too. One topic can become a blog post, a few social posts, an email to your list, and a short video script. AI makes that repurposing quick, so every idea reaches more people.' },
       { type: 'paragraph', text: "This is also where many businesses slip. Publishing raw, unedited AI text produces generic pages that rank poorly and don't build trust. Use AI for the first draft and the structure, then add your real experience, local details, client stories, and your own voice until it sounds like you." },
       { type: 'paragraph', text: "A simple way to start: pick one question a client asked this week, have AI draft an answer, edit it with your expertise, and publish it as a post. Then cut it into social posts and an email. That's one afternoon of work feeding several channels." },
+      { type: 'related', label: 'A Simple Content Plan for Businesses Without a Marketing Team', href: '/blog/content-plan-for-small-business' },
 
       { type: 'heading', text: 'AI social media management: stay consistent without burning out' },
       { type: 'paragraph', text: 'Social media works when you show up regularly, and most small business accounts fail for a plain reason. The owner gets busy and the posting stops. AI takes some of that pressure off.' },
       { type: 'paragraph', text: "It can build a month of content ideas around your services, seasonal topics, and client questions, and draft captions in minutes. You review, fix the tone, and schedule. Short video does well for local businesses on Instagram Reels, YouTube Shorts, and LinkedIn, and AI tools can help with scripts, captions, graphics, and even the video itself, so you don't need a production crew." },
       { type: 'paragraph', text: 'Reviews matter a great deal for local businesses. AI can send review requests to happy clients once a job is done and help you draft replies to feedback. A steady flow of recent reviews helps your reputation and your local search visibility.' },
+      { type: 'related', label: "12 Google Business Profile Settings You’re Probably Ignoring", href: '/blog/google-business-profile-optimization' },
       { type: 'paragraph', text: 'As a rule, let AI handle scheduling, first drafts, hashtags, review requests, and reporting. Keep the human parts human: replies to comments and messages that need judgment, sensitive topics, and stories from your own work.' },
 
       { type: 'cta', heading: 'Ready to turn this into a real plan?', text: "Every business needs a different mix of content, social media, and automation. We'll help you build one that fits your goals and budget.", buttonText: 'Reach Out to Us to Create Your Content Strategy', buttonHref: '/contact' },
@@ -219,47 +327,5 @@ export const posts: Post[] = [
 
       { type: 'cta', heading: "Let's build your AI-powered marketing plan", text: 'From content and social media to AI receptionists and lead follow-up, we help small businesses turn more inquiries into clients.', buttonText: 'Reach Out to Us to Create Your Content Strategy', buttonHref: '/contact' },
     ],
-  },
-  {
-    slug: 'placeholder-post-1',
-    category: 'Video Production',
-    title: '[Placeholder] What Makes a Property Walkthrough Actually Convert',
-    excerpt: 'Placeholder excerpt — swap in a real article about pacing, lighting, and shot selection for walkthrough videos that drive bookings.',
-    date: 'TBD',
-    readTime: '5 min read',
-    image: 'https://placehold.co/900x600/0C1721/93A29A?text=Article+Cover',
-    body: [
-      { type: 'paragraph', text: 'This is placeholder body copy. Replace this article with real content about your process, results, or point of view.' },
-      { type: 'paragraph', text: 'Add a second paragraph here once the real article is ready.' },
-    ],
-    featured: false,
-  },
-  {
-    slug: 'placeholder-post-2',
-    category: 'AI Advertising',
-    title: '[Placeholder] Inside Our AI Video Ad Workflow',
-    excerpt: 'Placeholder excerpt — swap in a real article walking through how you brief, generate, and test AI-produced ad creative.',
-    date: 'TBD',
-    readTime: '4 min read',
-    image: 'https://placehold.co/900x600/142530/93A29A?text=Article+Cover',
-    body: [
-      { type: 'paragraph', text: 'This is placeholder body copy. Replace this article with real content about your process, results, or point of view.' },
-      { type: 'paragraph', text: 'Add a second paragraph here once the real article is ready.' },
-    ],
-    featured: false,
-  },
-  {
-    slug: 'placeholder-post-3',
-    category: 'Web Design',
-    title: '[Placeholder] Why We Build Custom Sites Instead of Templates',
-    excerpt: 'Placeholder excerpt — swap in a real article about your web design philosophy and what it means for client results.',
-    date: 'TBD',
-    readTime: '6 min read',
-    image: 'https://placehold.co/900x600/223B3C/93A29A?text=Article+Cover',
-    body: [
-      { type: 'paragraph', text: 'This is placeholder body copy. Replace this article with real content about your process, results, or point of view.' },
-      { type: 'paragraph', text: 'Add a second paragraph here once the real article is ready.' },
-    ],
-    featured: false,
   },
 ]

@@ -62,6 +62,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   <p key={i} style={{ color: '#3D4640', fontSize: '1.0625rem', lineHeight: 1.8 }}>{block.text}</p>
                 )
               }
+              if (block.type === 'related') {
+                return (
+                  <p key={i} style={{ fontSize: '0.95rem', margin: '-6px 0 0' }}>
+                    <span style={{ color: '#5B6560' }}>Related: </span>
+                    <Link href={block.href} style={{ color: '#0B1210', fontWeight: 600, textDecoration: 'underline', textDecorationColor: '#C8F14B', textDecorationThickness: 2, textUnderlineOffset: 3 }}>
+                      {block.label} →
+                    </Link>
+                  </p>
+                )
+              }
               if (block.type === 'list') {
                 return (
                   <div key={i} style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
