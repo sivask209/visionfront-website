@@ -115,15 +115,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </div>
       </section>
-
-      <section style={{ background: '#04070C', padding: '0 24px 120px' }}>
-        <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontFamily: 'var(--font-bricolage),sans-serif', fontWeight: 800, fontSize: 'clamp(1.7rem,3.5vw,2.4rem)', letterSpacing: '-0.02em', color: '#EDEFE7', marginBottom: 20 }}>
-            Ready to start <span className="g-text">your project?</span>
-          </h2>
-          <Link href="/contact" className="btn-primary" style={{ padding: '15px 34px', fontSize: '1rem' }}>Book a Free Consultation</Link>
-        </div>
-      </section>
     </>
   )
 }
